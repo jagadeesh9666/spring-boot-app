@@ -74,5 +74,5 @@ sudo usermod -aG docker ubuntu
 sudo systemctl restart docker
 ```
 * configure docker credentials in jenkins
-![preview](./Images/j17.png)
+![Preview](./Images/j17.png)
 * configure github credentials in jenkins
