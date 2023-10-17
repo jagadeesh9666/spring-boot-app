@@ -20,6 +20,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins -y
 ```
+* To open jenkins `http://<ip address>:8080`
 ![preview](./Images/j1.png)
 * To get the Admin password
 ![preview](./Images/j2.png)
@@ -49,5 +50,29 @@ chmod -R 755 /home/sonarqube/sonarqube-9.6.1.59531
 chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.6.1.59531
 cd sonarqube-9.6.1.59531/bin/linux-x86-64
 ./sonar.sh start
+./sonar.sh status
 ```
+* To open sonarqube `http://<ip address>:9000`
+![preview](./Images/j11.png)
 
+### configure sonarqube with jenkins
+* Go to my account section in sonarqube
+* Go to security and enter name for token and generate token
+![preview](./Images/j12.png)
+![preview](./Images/j13.png)
+* Now in jenkins
+![preview](./Images/j14.png)
+![preview](./Images/j15.png)
+* now here enter the key generated in sonarqube
+![preview](./Images/j16.png)
+
+### install docker
+```
+sudo apt update
+sudo apt install docker.io
+sudo usermod -aG docker ubuntu
+sudo systemctl restart docker
+```
+* configure docker credentials in jenkins
+![preview](./Images/j17.png)
+* configure github credentials in jenkins
