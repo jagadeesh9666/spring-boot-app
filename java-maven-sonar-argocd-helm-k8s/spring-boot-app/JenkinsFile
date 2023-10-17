@@ -6,10 +6,10 @@ pipeline {
     }
   }
   stages {
-    stage('Checkout') {
+    stage('code') {
       steps {
-        sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/jagadeesh9666/spring-boot-app.git'
+          git url: 'https://github.com/jagadeesh9666/spring-boot-app.git',
+              branch: 'main'
       }
     }
     stage('Build and Test') {
